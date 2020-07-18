@@ -134,8 +134,30 @@ Number of iterations required:**99**
 [3x3]*[3x3]-->[1x1]
 
 ```
+-----------------------------------------------------------------------------------------------------
+
 **4. How are kernels initialized?**
-The weights of Kernels must be initialized to small random numbers preferbly in between close to zero and less than 1. This along with Pixel value(generally range between 0-255) when normalized will help us eliminate exploding gradient problem that arrise during back propagation.
+The weights of Kernels must be initialized to small random numbers preferably in between close to zero and less than 1. This along with Pixel value(generally range between 0-255) when normalized will help us eliminate exploding gradient problem that arrise during back propagation.
+
+--------------------------------------------------------------------------------------------------
+**5. What happens during the training of a DNN?**
+Consider a example model as shown below which has 2 layers, each layer consisting of a convolution layer + a pooling layer. A convolution layer would have a kernels(whose purpose is to extract features from the image) with weights that are initiated with random values in between 0 to 1. 
+
+![Image](https://drive.google.com/uc?id=1trz__XhwABeGgxzjXP0gvdz9ZXCVAZtL)
+
+There are primarily 2 stages in training of a DNN or a CNN. 
+**- Forward Pass:**
+At every layer convolution operation happens with image pixels and kernels which are intiated with random values between 0 and 1. Then this information oftern reffered as channels are passed on to the next layer where the same operation happens.
+` 
+let X be the input image 
+f() be the convolution at first layer 
+Y1 = f(X) 
+assuming g() as convolution at second layer 
+Y1 = g(Y1) = g(f(X)) 
+`
+
+**- Backward Pass:** 
+Y1 is then passed through 
 
 
 
