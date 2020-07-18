@@ -1,6 +1,6 @@
 # session1 assignment 
 
-**What are Channels and Kernels (according to EVA)?** 
+**1. What are Channels and Kernels (according to EVA)?** 
 
 A simple black and white image can be looked as a matrix where every element from matrix is a pixel in image with values ranging from 0-255 where 255 being absolute white and 0 being pitch black. Now coloured image can be broken into similar matrix of colours(eg: Red,green,blue) which when stacked on top of each other would result in the original picture. 
  
@@ -13,8 +13,10 @@ A simple black and white image can be looked as a matrix where every element fro
   In Image processing to extract features we use small matrices (3x3,5x5 e.t.c.). This matrix helps us extract mutiple feature channels like edge detectors, horizontal detectors etc. A kernel can also be viewed as a `filter or feauture extractor` that can help us in manipulating and extracting parts of image for further analysis. Some of the examples can be blur kernel, sharpen kernel which are manually created kernels. Below you can see a vertical edge detector.
   
   ![Image](https://drive.google.com/uc?id=10jbReSFLy4Sm_2CKWRzKVvq1bhQRRwvw)
- ----
- **Why should we (nearly) always use 3x3 kernels?**
+  
+ --------------------------------------------------------------------------
+ 
+ **2. Why should we (nearly) always use 3x3 kernels?**
  
  The process of extract of features using kernels from an image is called **convolution**. Convolution is simply a element wise multiplication of 2 matrices followed by a sum of all those multiplications. Here 2 matrices being kernel(green matrix) and part of image (blue matrix). A simple 3x3 convolution can be observed below
  
@@ -24,7 +26,9 @@ A simple black and white image can be looked as a matrix where every element fro
 
 ![Image](https://drive.google.com/uc?id=1zeB0kygvwoaeYV_zPOD_544b4w40Zew9)
 
-**How many times to we need to perform 3x3 convolutions operations to reach close to 1x1 from 199x199 (type each layer output like 199x199 > 197x197...)**
+--------------
+
+**3. How many times to we need to perform 3x3 convolutions operations to reach close to 1x1 from 199x199 (type each layer output like 199x199 > 197x197...)**
 
 Number of iterations required:**99**
 
@@ -130,6 +134,8 @@ Number of iterations required:**99**
 [3x3]*[3x3]-->[1x1]
 
 ```
+**4. How are kernels initialized?**
+The weights of Kernels must be initialized to small random numbers preferbly in between close to zero and less than 1. This along with Pixel value(generally range between 0-255) when normalized will help us eliminate exploding gradient problem that arrise during back propagation.
 
 
 
