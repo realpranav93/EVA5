@@ -146,6 +146,7 @@ Consider a example model as shown below which has 2 layers, each layer consistin
 ![Image](https://drive.google.com/uc?id=1trz__XhwABeGgxzjXP0gvdz9ZXCVAZtL)
 
 There are primarily 2 stages in training of a DNN or a CNN. 
+
 **- Forward Pass:**
 At every layer convolution operation happens with image pixels and kernels which are intiated with random values between 0 and 1. Then this information oftern reffered as channels are passed on to the next layer where the same operation happens.
 ` 
@@ -157,7 +158,7 @@ Y1 = g(Y1) = g(f(X))
 `
 
 **- Backward Pass:** 
-Y1 is then passed through 
+A cost function is defined which accounts for the error in our predictions. And backpropagation is done in which the kernels values(which were initiated at random during forward pass) are calculated by trial basis(also known as epochs) for every layer such the cost function is minimised. 
 
 
 
