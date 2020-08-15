@@ -19,6 +19,6 @@ To build a Model to acheive a validation accuracy >=99.4% with less than 20k par
 
 **Block6:** Is to Intialize the model instance from block2 and run the train and test from block5 for 20 iterations called epochs. In every epoch the train function goes through all the images in training once and updates the weights for every batch of 128 images. So given that there 60000 images in training in 1 epoch weights are updates ~ 468 times(60k/128).
 
-## ** Output and conclusion**
+## **Output and conclusion**
 - We are able to observe epoch number, Train and test loss and accuracy in the output of block6
 - `An validation accuracy of 99.44% is observed in 15 epoch` and we have used `16,138 paramerters` to acheive it.
